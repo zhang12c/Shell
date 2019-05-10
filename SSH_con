@@ -1,0 +1,14 @@
+SSH连接总是隔一段时间没有输入时就断开，解决办法如下：
+
+服务端配置
+sudo vi /etc/ssh/sshd_config
+ClientAliveInterval 60     #服务端主动向客户端请求响应的间隔
+ClientAliveCountMax 10    #服务器发出请求后客户端没有响应的次数达到一定值就自动断开
+sudo restart ssh
+
+客户端配置 
+sudo vi /etc/ssh/ssh_config  #或~/.ssh/config
+
+
+TCPKeepAlive=yes
+ServerAliveInterval 60   #客户端主动向服务端请求响应的间隔
