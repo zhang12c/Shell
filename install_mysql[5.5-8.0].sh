@@ -22,7 +22,7 @@ EOF
 }
 dis_mysql80(){
 
-yum-config-manager —disable mysql80-community --save
+yum-config-manager --disable mysql80-community --save
 }
 en_mysql55(){
 
@@ -57,7 +57,7 @@ case $input in
 	1)
 		dis_mysql80#yum-config-manager —disable mysql80-community --save
 		en_mysql56#yum-config-manager --enable mysql56-community --save
-		in_mysql#yum install mysql-community-server -y;;
+		in_mysql;;#yum install mysql-community-server -y;;
 	2)
 		dis_mysql80#yum-config-manager —disable mysql80-community --save
 		en_mysql57#yum-config-manager --enable mysql57-community --save
